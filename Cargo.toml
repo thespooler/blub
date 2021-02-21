@@ -11,10 +11,10 @@ bytemuck = "1.4.1"
 cgmath = {git = "https://github.com/rustgd/cgmath", rev = "50a345b", features = ["rand", "serde"]}
 
 egui = "0.9"
-egui_wgpu_backend = {git = "https://github.com/Wumpf/egui_wgpu_backend", rev = "bce075329635ecac2e6e0eed7ed16fbd4e494e51"}
-egui_winit_platform = {git = "https://github.com/Wumpf/egui_winit_platform", rev = "fcf3711fe77c409ba24b2eed086560cd492a9520"}
-epi = "0.9"
+egui_wgpu_backend = { git = "https://github.com/thespooler/egui_wgpu_backend", branch="wgpu-upstream" }
+egui_winit_platform = {git = "https://github.com/hasenbanck/egui_winit_platform"}
 
+epi = "0.9"
 enumflags2 = "0.6"
 env_logger = "0.8.2"
 futures = "0.3"
@@ -32,12 +32,8 @@ shaderc = "0.7"
 strum = "0.20"
 strum_macros = "0.20.1"
 tobj = "2.0.3"
-wgpu = {git = "https://github.com/gfx-rs/wgpu-rs.git", rev = "6864c0be84a7a9994486ac6704d390ffbd271641", features = ["trace"]}
+wgpu = {git = "https://github.com/gfx-rs/wgpu-rs.git", features = ["trace"]}
 winit = "0.24"
 
 [profile.dev.package."*"]
 opt-level = 3
-
-[patch."https://github.com/gfx-rs/wgpu"]
-wgpu-core = {version = "0.7", path = "../wgpu/wgpu-core"}
-wgpu-types = {version = "0.7", path = "../wgpu/wgpu-types"}
